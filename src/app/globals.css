@@ -5,6 +5,7 @@
 
 @theme inline {
   --font-heading: var(--font-heading);
+  --font-display: var(--font-heading);
   --font-body:    var(--font-body);
   --font-sans:    var(--font-body);
 
