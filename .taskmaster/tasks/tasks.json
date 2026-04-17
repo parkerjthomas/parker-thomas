@@ -44,14 +44,15 @@
         "id": "4",
         "title": "About Section",
         "description": "Build About using Bento Grid and Tracing Beam; content from home.ts about object.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "2"
         ],
         "priority": "medium",
         "details": "Layout with Bento Grid; Tracing Beam as scroll reveal wrapper. Pull all copy from src/content/home.ts about object.",
         "testStrategy": "Section renders, tracing beam animates on scroll.",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-04-17T20:47:29.550Z"
       },
       {
         "id": "5",
@@ -71,14 +72,15 @@
         "id": "6",
         "title": "For Agencies Page",
         "description": "Build /for-agencies with Compare, Sticky Scroll Reveal, Wobble Card; pitch agency white-label model.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "2"
         ],
         "priority": "high",
         "details": "Compare: average site vs Parker Thomas quality. Sticky Scroll for value props. Wobble Card for contact/partner CTA. Marketing copy from content modules, not hardcoded in page shell.",
         "testStrategy": "Page renders, Compare interactive, Sticky Scroll animates.",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-04-17T18:05:27.072Z"
       },
       {
         "id": "7",
@@ -138,9 +140,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-04-17T17:41:32.515Z",
+      "lastModified": "2026-04-17T20:47:29.550Z",
       "taskCount": 10,
-      "completedCount": 4,
+      "completedCount": 6,
       "tags": [
         "master"
       ]
