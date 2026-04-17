@@ -1,15 +1,23 @@
 import type { Metadata } from 'next'
 
+import AgenciesCompare from '@/components/sections/AgenciesCompare'
+import AgenciesCta from '@/components/sections/AgenciesCta'
+import AgenciesHero from '@/components/sections/AgenciesHero'
+import AgenciesStickyScroll from '@/components/sections/AgenciesStickyScroll'
+
 export const metadata: Metadata = {
   title: 'For Agencies',
   description:
-    'Partner with Parker Thomas to offer celebrity-quality websites to your clients. White-label ready, Cleris-powered.',
+    'White-label web design for boutique marketing agencies. Celebrity-quality sites, delivered under your brand.',
 }
 
 export default function ForAgenciesPage() {
   return (
-    <section className="min-h-screen flex items-center justify-center pt-16">
-      <p className="text-muted-foreground text-sm">For Agencies page coming in Task 6</p>
-    </section>
+    <>
+      <AgenciesHero />
+      <AgenciesCompare />
+      <AgenciesStickyScroll />
+      <AgenciesCta />
+    </>
   )
 }
