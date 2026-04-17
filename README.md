@@ -1,36 +1,80 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# parker-thomas.com
 
-## Getting Started
+Parker Thomas's personal brand site. Showcases celebrity-quality website templates for high-margin local businesses — medspas, cosmetic dentistry, and boutique agencies.
 
-First, run the development server:
+**Live:** https://parker-thomas.com
+
+---
+
+## Stack
+
+Next.js 16.2.2 · TypeScript · Tailwind v4 · Shadcn Nova · Framer Motion · GSAP · Aceternity Pro · Vercel Pro
+
+## Getting started
 
 ```bash
+npm install
+cp .env.example .env.local   # fill in real values
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open http://localhost:3000 — loads in dark mode by default.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key paths
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+| What | Where |
+|---|---|
+| Site identity | `src/config/site.ts` |
+| Navigation | `src/config/navigation.ts` |
+| Home copy | `src/content/home.ts` |
+| Templates data | `src/content/templates.ts` |
+| Blog posts (MDX) | `src/content/posts/` |
+| Design tokens | `src/app/globals.css` |
+| Animation presets | `src/lib/motion.ts` |
+| Self-hosted fonts | `src/lib/fonts.ts` + `src/assets/fonts/` |
+| Page sections | `src/components/sections/` |
+| Aceternity wrappers | `src/components/aceternity/` |
 
-## Learn More
+## Adding an Aceternity component
 
-To learn more about Next.js, take a look at the following resources:
+```bash
+cp components.json.example components.json   # gitignored — add real API key
+npx shadcn@latest add @aceternity/[name]
+# Then wrap it in src/components/aceternity/
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+See `.cursor/skills/add-aceternity-component.md` for the full pattern.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Tests
 
-## Deploy on Vercel
+```bash
+npm run test:run   # smoke tests — config, locked copy, templates data
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Task tracking
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses [Task Master](https://github.com/eyaltoledano/claude-task-master) for AI-assisted task management.
+
+```bash
+cp .cursor/mcp.json.example .cursor/mcp.json   # gitignored — add Anthropic key
+# Enable in Cursor Settings → MCP tab
+```
+
+Then in Cursor chat: `Initialize taskmaster-ai in my project`
+
+PRD lives at `.taskmaster/docs/prd.txt`.
+
+## Hard constraints
+
+- Never `hsl(var(--token)/opacity)` — use `color-mix(in oklch, ...)` for opacity
+- Never `next/font/google` — fonts are self-hosted `.woff2`
+- Never `<Button asChild>` — use `buttonVariants()` on `<Link>`
+- Never edit `src/components/ui/` — extend via `className` only
+- Never import Aceternity raw — always wrap in `src/components/aceternity/`
+- Never hardcode content — always from `src/config/site.ts` or `src/content/*.ts`
+
+## Locked copy — never change
+
+> "I build the web presence. Then I build what fills it."
+
+Hero headline and typewriter subheadline are asserted in `src/test/smoke.test.tsx`.

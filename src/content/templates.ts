@@ -13,7 +13,7 @@ export const templates: TemplatePreview[] = [
     title: 'Lumina',
     vertical: 'medspa',
     tagline: 'Luxury medspa and esthetics',
-    imagePlaceholder: '/templates/lumina-preview.jpg',
+    imagePlaceholder: '/templates/lumina-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -21,7 +21,7 @@ export const templates: TemplatePreview[] = [
     title: 'Radiance',
     vertical: 'medspa',
     tagline: 'Modern skincare and wellness',
-    imagePlaceholder: '/templates/radiance-preview.jpg',
+    imagePlaceholder: '/templates/radiance-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -29,7 +29,7 @@ export const templates: TemplatePreview[] = [
     title: 'Aurore',
     vertical: 'medspa',
     tagline: 'Premium esthetic clinic',
-    imagePlaceholder: '/templates/aurore-preview.jpg',
+    imagePlaceholder: '/templates/aurore-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -37,7 +37,7 @@ export const templates: TemplatePreview[] = [
     title: 'White Coat',
     vertical: 'dental',
     tagline: 'Cosmetic and general dentistry',
-    imagePlaceholder: '/templates/white-coat-preview.jpg',
+    imagePlaceholder: '/templates/white-coat-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -45,7 +45,7 @@ export const templates: TemplatePreview[] = [
     title: 'Apex Smile',
     vertical: 'dental',
     tagline: 'High-end smile design',
-    imagePlaceholder: '/templates/apex-smile-preview.jpg',
+    imagePlaceholder: '/templates/apex-smile-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -53,7 +53,7 @@ export const templates: TemplatePreview[] = [
     title: 'Pearl',
     vertical: 'dental',
     tagline: 'Boutique family dentistry',
-    imagePlaceholder: '/templates/pearl-preview.jpg',
+    imagePlaceholder: '/templates/pearl-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -61,7 +61,7 @@ export const templates: TemplatePreview[] = [
     title: 'Signal',
     vertical: 'agency',
     tagline: 'Boutique marketing agency',
-    imagePlaceholder: '/templates/signal-preview.jpg',
+    imagePlaceholder: '/templates/signal-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -69,7 +69,7 @@ export const templates: TemplatePreview[] = [
     title: 'Meridian',
     vertical: 'agency',
     tagline: 'Full-service creative agency',
-    imagePlaceholder: '/templates/meridian-preview.jpg',
+    imagePlaceholder: '/templates/meridian-preview.svg',
     priceRange: '$2,800–$5,500',
   },
   {
@@ -77,7 +77,7 @@ export const templates: TemplatePreview[] = [
     title: 'Foundry',
     vertical: 'agency',
     tagline: 'Growth and performance agency',
-    imagePlaceholder: '/templates/foundry-preview.jpg',
+    imagePlaceholder: '/templates/foundry-preview.svg',
     priceRange: '$2,800–$5,500',
   },
 ]

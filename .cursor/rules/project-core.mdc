@@ -1,0 +1,59 @@
+---
+description: Project identity, key paths, and constraints
+alwaysApply: true
+---
+
+# Parker Thomas — Personal Brand Site
+
+"I build the web presence. Then I build what fills it."
+URL: https://parker-thomas.com
+
+## Key Paths
+
+| What | Where |
+|------|-------|
+| Routes | `src/app/(marketing)/` |
+| Shadcn (no-touch) | `src/components/ui/` |
+| Aceternity wrappers | `src/components/aceternity/` |
+| Page sections | `src/components/sections/` |
+| Layout | `src/components/layout/` |
+| Animation baseline | `src/lib/motion.ts` |
+| Site config | `src/config/site.ts` |
+| Navigation | `src/config/navigation.ts` |
+| Home content | `src/content/home.ts` |
+| Templates data | `src/content/templates.ts` |
+| Blog posts (MDX) | `src/content/posts/` |
+| Structured data | `src/lib/structured-data.ts` |
+| Fonts | `src/lib/fonts.ts` |
+| Design tokens | `src/app/globals.css` |
+| Task Master PRD | `.taskmaster/docs/prd.txt` |
+
+## Locked Content — Never Change
+
+- Hero headline: "I build the web presence. Then I build what fills it."
+- Hero sub (typewriter): "Built for the businesses that can't afford to look average."
+- Primary CTA: "Get a site" → /templates
+- Secondary CTA: "Partner with me" → /for-agencies
+
+## Hard Constraints
+
+- Never `hsl(var(--token)/opacity)` — use `color-mix(in oklch, ...)` for opacity
+- Never `next/font/google` — fonts are self-hosted via `next/font/local`
+- Never `<Button asChild>` — use `buttonVariants()` on `<Link>`
+- Never edit `src/components/ui/` files — extend via `className` only
+- Never import Aceternity raw — always `src/components/aceternity/` wrappers
+- Never hardcode identity strings — always from `src/config/site.ts`
+- Never hardcode marketing copy — always from `src/content/*.ts`
+- All animation values from `src/lib/motion.ts` only
+- Tailwind v4 — no `tailwind.config.ts`, all theme in `globals.css @theme inline`
+- `'use client'` only when needed — default to server components
+- Mobile-first: base → `sm` → `md` → `lg` → `xl`
+
+## Component Hierarchy
+
+1. `src/components/ui/` — Shadcn. Use as-is. Never modify.
+2. `src/components/aceternity/` — Wrapped Aceternity. Always `'use client'`. Never raw.
+3. `src/components/common/` — Custom primitives built from `ui/`.
+4. `src/components/sections/` — Page sections. Built from `common/` + `aceternity/`.
+5. `src/components/layout/` — Navbar, Footer.
+6. `src/app/` — Routes only. Compose sections. No logic, no component definitions.

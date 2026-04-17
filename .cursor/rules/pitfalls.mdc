@@ -1,0 +1,79 @@
+---
+description: Common pitfalls and how to avoid them
+alwaysApply: true
+---
+
+# Known Pitfalls
+
+## 1. Framer Motion Hydration Mismatch
+
+**Problem:** Using `motion` components in server components causes hydration errors.
+**Fix:** Always mark files using Framer Motion with `'use client'`.
+
+## 2. GSAP ScrollTrigger Cleanup
+
+**Problem:** ScrollTrigger instances persist across navigations → memory leaks.
+**Fix:** Always return cleanup from `useEffect`.
+
+```tsx
+useEffect(() => {
+  const ctx = gsap.context(() => {
+    ScrollTrigger.create({ ... })
+  }, ref)
+  return () => ctx.revert()
+}, [])
+```
+
+## 3. Raw Aceternity Imports
+
+**Problem:** Importing Aceternity directly couples pages to library internals.
+**Fix:** Always wrap in `src/components/aceternity/`. Never import raw.
+
+```tsx
+// ❌ Wrong
+import { SparklesCore } from '@aceternity/sparkles'
+
+// ✅ Correct
+import { SparklesWrapper } from '@/components/aceternity/SparklesWrapper'
+```
+
+## 4. Editing Shadcn ui/ Files
+
+**Problem:** `src/components/ui/` files are overwritten on next `shadcn` CLI run.
+**Fix:** Never modify. Extend via `className` + `cn()` in consumer components.
+
+## 5. next-themes Before Mount Flash
+
+**Problem:** Reading theme before mount → flash or hydration mismatch.
+**Fix:** Use the mounted pattern.
+
+```tsx
+const [mounted, setMounted] = useState(false)
+useEffect(() => setMounted(true), [])
+if (!mounted) return null
+```
+
+## 6. Opacity on CSS Variables (Tailwind v4)
+
+**Problem:** `hsl(var(--token)/opacity)` does NOT work in Tailwind v4.
+**Fix:** Use `color-mix(in oklch, var(--token) 50%, transparent)`.
+
+## 7. Google Fonts
+
+**Problem:** `next/font/google` makes external requests — explicitly banned.
+**Fix:** Fonts are self-hosted `.woff2` in `src/assets/fonts/` via `next/font/local`.
+
+## 8. Button asChild
+
+**Problem:** `<Button asChild>` is banned in this project.
+**Fix:** Use `buttonVariants()` on `<Link>`.
+
+```tsx
+import { buttonVariants } from '@/components/ui/button'
+<Link href="/templates" className={buttonVariants({ variant: 'default' })}>Get a site</Link>
+```
+
+## 9. Framer Motion + GSAP on Same Element
+
+**Problem:** Both write to same transform/opacity → jank.
+**Fix:** Framer for entrance/exit. GSAP for scroll-driven. Never both on same element.

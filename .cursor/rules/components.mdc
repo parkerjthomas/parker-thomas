@@ -1,0 +1,21 @@
+---
+description: Component composition patterns
+alwaysApply: false
+globs: src/components/**,src/app/**/*.tsx
+---
+
+# Component Conventions
+
+## Every Section File
+
+- Named `[SectionName].tsx` in `src/components/sections/`
+- Marked `'use client'` (Framer Motion)
+- Accepts `className` prop
+- Uses semantic HTML (`section`, `article`)
+- Imports animation variants from `lib/motion.ts` only
+- Pulls identity from `config/site.ts`
+- Pulls copy from `src/content/*.ts` — no hardcoded strings
+
+## Responsive Pattern
+
+Mobile-first. Base → `sm` → `md` → `lg` → `xl` in that order, always.
