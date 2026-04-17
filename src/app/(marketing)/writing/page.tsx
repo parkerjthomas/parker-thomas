@@ -1,9 +1,17 @@
 import type { Metadata } from 'next'
 
+import { siteConfig } from '@/config/site'
+
 export const metadata: Metadata = {
   title: 'Writing',
   description:
     'Thoughts on web design, local business growth, and building in public.',
+  openGraph: {
+    url: `${siteConfig.url}/writing`,
+  },
+  alternates: {
+    canonical: `${siteConfig.url}/writing`,
+  },
 }
 
 export default function WritingPage() {
