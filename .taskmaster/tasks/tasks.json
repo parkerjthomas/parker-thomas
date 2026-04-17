@@ -2,110 +2,146 @@
   "master": {
     "tasks": [
       {
-        "id": 1,
+        "id": "1",
         "title": "Scaffold",
         "description": "Create repo, copy shared foundation from client-site-template, scaffold all routes as stubs with metadata exports.",
         "status": "done",
         "dependencies": [],
         "priority": "high",
         "details": "Foundation work: repository layout, shared patterns from client-site-template, all marketing routes present as stubs with metadata exports per PRD routes list.",
-        "testStrategy": "npm test passes, npm run dev starts, dark page loads."
+        "testStrategy": "npm test passes, npm run dev starts, dark page loads.",
+        "subtasks": []
       },
       {
-        "id": 2,
+        "id": "2",
         "title": "Floating Navbar",
         "description": "Build the Floating Navbar using Aceternity's Floating Navbar, wrapped and wired to navigation config.",
-        "status": "pending",
-        "dependencies": [1],
+        "status": "done",
+        "dependencies": [
+          "1"
+        ],
         "priority": "high",
         "details": "Implement in src/components/aceternity/FloatingNavbar.tsx, consume from src/components/layout/Navbar.tsx. Items from src/config/navigation.ts. CTA uses buttonVariants() on Link. Include dark/light mode toggle and mobile menu.",
-        "testStrategy": "Navbar visible on all routes, theme toggle works, mobile responsive."
+        "testStrategy": "Navbar visible on all routes, theme toggle works, mobile responsive.",
+        "updatedAt": "2026-04-17T16:41:09.226Z",
+        "subtasks": []
       },
       {
-        "id": 3,
+        "id": "3",
         "title": "Hero Section",
         "description": "Build the Hero with Lamp, Spotlight New, Text Generate Effect, Aurora, Typewriter, Moving Border CTAs — all wrapped Aceternity, content from home.ts.",
         "status": "pending",
-        "dependencies": [2],
+        "dependencies": [
+          "2"
+        ],
         "priority": "high",
         "details": "All Aceternity components wrapped under src/components/aceternity/. Content from src/content/home.ts hero object. Respect locked headline, typewriter sub, and primary/secondary CTAs.",
-        "testStrategy": "Animations play on load, headline matches locked copy, both CTAs present."
+        "testStrategy": "Animations play on load, headline matches locked copy, both CTAs present.",
+        "subtasks": []
       },
       {
-        "id": 4,
+        "id": "4",
         "title": "About Section",
         "description": "Build About using Bento Grid and Tracing Beam; content from home.ts about object.",
         "status": "pending",
-        "dependencies": [2],
+        "dependencies": [
+          "2"
+        ],
         "priority": "medium",
         "details": "Layout with Bento Grid; Tracing Beam as scroll reveal wrapper. Pull all copy from src/content/home.ts about object.",
-        "testStrategy": "Section renders, tracing beam animates on scroll."
+        "testStrategy": "Section renders, tracing beam animates on scroll.",
+        "subtasks": []
       },
       {
-        "id": 5,
+        "id": "5",
         "title": "Templates Gallery",
         "description": "Build /templates gallery with Focus Cards and vertical tabs (medspa/dental/agency) from templates.ts.",
         "status": "pending",
-        "dependencies": [2],
+        "dependencies": [
+          "2"
+        ],
         "priority": "high",
         "details": "Use Focus Cards as primary; Tabs for vertical filter. Data from src/content/templates.ts (9 templates). Placeholder images until static assets are added.",
-        "testStrategy": "All 9 templates shown, tab filter works, Focus Cards animate."
+        "testStrategy": "All 9 templates shown, tab filter works, Focus Cards animate.",
+        "subtasks": []
       },
       {
-        "id": 6,
+        "id": "6",
         "title": "For Agencies Page",
         "description": "Build /for-agencies with Compare, Sticky Scroll Reveal, Wobble Card; pitch agency white-label model.",
         "status": "pending",
-        "dependencies": [2],
+        "dependencies": [
+          "2"
+        ],
         "priority": "high",
         "details": "Compare: average site vs Parker Thomas quality. Sticky Scroll for value props. Wobble Card for contact/partner CTA. Marketing copy from content modules, not hardcoded in page shell.",
-        "testStrategy": "Page renders, Compare interactive, Sticky Scroll animates."
+        "testStrategy": "Page renders, Compare interactive, Sticky Scroll animates.",
+        "subtasks": []
       },
       {
-        "id": 7,
+        "id": "7",
         "title": "Wire Content, OG, Sitemap, Robots",
         "description": "Metadata, OG image route, sitemap, and robots.txt across all routes.",
         "status": "pending",
-        "dependencies": [3, 4, 5, 6],
+        "dependencies": [
+          "3",
+          "4",
+          "5",
+          "6"
+        ],
         "priority": "high",
         "details": "Every route has proper metadata exports. OG image route at /og with site identity from src/config/site.ts. Sitemap and robots.txt correct for production.",
-        "testStrategy": "Meta tags present on key pages, sitemap.xml accessible, /og returns 1200x630 image."
+        "testStrategy": "Meta tags present on key pages, sitemap.xml accessible, /og returns 1200x630 image.",
+        "subtasks": []
       },
       {
-        "id": 8,
+        "id": "8",
         "title": "Deploy to Vercel",
         "description": "Vercel project parker-thomas, GitHub repo parkerjthomas/parker-thomas, RESEND_API_KEY, confirm dark default.",
         "status": "pending",
-        "dependencies": [7],
+        "dependencies": [
+          "7"
+        ],
         "priority": "high",
         "details": "Create/link Vercel project, connect repo, set RESEND_API_KEY, verify production build and default theme.",
-        "testStrategy": "Site live on production URL, dark mode default, no build errors."
+        "testStrategy": "Site live on production URL, dark mode default, no build errors.",
+        "subtasks": []
       },
       {
-        "id": 9,
+        "id": "9",
         "title": "Blog — Writing Page",
         "description": "Blog index and [slug] post pages with MDX in src/content/posts/.",
         "status": "pending",
-        "dependencies": [8],
+        "dependencies": [
+          "8"
+        ],
         "priority": "medium",
         "details": "MDX pipeline, first post: \"Why your medspa website is costing you clients.\" Syntax highlighting for code blocks.",
-        "testStrategy": "Blog index lists posts, slug page renders MDX, syntax highlighting works."
+        "testStrategy": "Blog index lists posts, slug page renders MDX, syntax highlighting works.",
+        "subtasks": []
       },
       {
-        "id": 10,
+        "id": "10",
         "title": "Outreach Pipeline",
         "description": "Apify scrape, AI website grader, Clay → n8n → Ollama → Claude drafts → approval → Instantly.",
         "status": "pending",
-        "dependencies": [9],
+        "dependencies": [
+          "9"
+        ],
         "priority": "low",
         "details": "Minneapolis medspas + dentistry scrape; grader scores LCP, mobile, trust, CTA clarity, schema; score under 70 feeds outreach; enrichment and email pipeline per PRD.",
-        "testStrategy": "First batch of 20 businesses graded and in outreach queue."
+        "testStrategy": "First batch of 20 businesses graded and in outreach queue.",
+        "subtasks": []
       }
     ],
     "metadata": {
-      "created": "2026-04-17T00:00:00.000Z",
-      "updated": "2026-04-17T00:00:00.000Z",
-      "description": "Tasks generated from .taskmaster/docs/prd.txt"
+      "version": "1.0.0",
+      "lastModified": "2026-04-17T16:41:09.226Z",
+      "taskCount": 10,
+      "completedCount": 2,
+      "tags": [
+        "master"
+      ]
     }
   }
 }
