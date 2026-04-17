@@ -56,14 +56,15 @@
         "id": "5",
         "title": "Templates Gallery",
         "description": "Build /templates gallery with Focus Cards and vertical tabs (medspa/dental/agency) from templates.ts.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "2"
         ],
         "priority": "high",
         "details": "Use Focus Cards as primary; Tabs for vertical filter. Data from src/content/templates.ts (9 templates). Placeholder images until static assets are added.",
         "testStrategy": "All 9 templates shown, tab filter works, Focus Cards animate.",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-04-17T17:41:32.515Z"
       },
       {
         "id": "6",
@@ -136,9 +137,9 @@
     ],
     "metadata": {
       "version": "1.0.0",
-      "lastModified": "2026-04-17T16:41:09.226Z",
+      "lastModified": "2026-04-17T17:41:32.515Z",
       "taskCount": 10,
-      "completedCount": 2,
+      "completedCount": 3,
       "tags": [
         "master"
       ]
