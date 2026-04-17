@@ -11,6 +11,42 @@ export const homeContent = {
     heading: 'What I do',
     body: 'I design and build celebrity-quality websites for high-margin local businesses — medspas, cosmetic dentistry, and boutique agencies. Every site is a showcase, not a landing page.',
     cta: { label: 'See templates', href: '/templates' },
+    bentoItems: [
+      {
+        title: 'Celebrity-quality design',
+        description:
+          'Built with Aceternity Pro, Framer Motion, and GSAP. The kind of site your clients screenshot and send to their friends.',
+        size: 'large',
+      },
+      {
+        title: 'Medspas & esthetics',
+        description: 'Luxury positioning for high-ticket skincare and wellness practices.',
+        size: 'small',
+      },
+      {
+        title: 'Cosmetic dentistry',
+        description: 'Smile design studios that convert from the first click.',
+        size: 'small',
+      },
+      {
+        title: 'Boutique agencies',
+        description:
+          'White-label builds that make your agency look like a 10-person design team.',
+        size: 'small',
+      },
+      {
+        title: 'Delivered in days',
+        description:
+          'Deployed on Vercel Pro. Live in under two weeks from kickoff call to launch.',
+        size: 'medium',
+      },
+      {
+        title: '$2,800 – $5,500',
+        description:
+          'Flat-rate pricing. No hourly surprises. Scope is locked before a line of code is written.',
+        size: 'medium',
+      },
+    ],
   },
   services: {
     eyebrow: 'The offer',
