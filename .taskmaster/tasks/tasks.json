@@ -30,14 +30,15 @@
         "id": "3",
         "title": "Hero Section",
         "description": "Build the Hero with Lamp, Spotlight New, Text Generate Effect, Aurora, Typewriter, Moving Border CTAs — all wrapped Aceternity, content from home.ts.",
-        "status": "pending",
+        "status": "done",
         "dependencies": [
           "2"
         ],
         "priority": "high",
         "details": "All Aceternity components wrapped under src/components/aceternity/. Content from src/content/home.ts hero object. Respect locked headline, typewriter sub, and primary/secondary CTAs.",
         "testStrategy": "Animations play on load, headline matches locked copy, both CTAs present.",
-        "subtasks": []
+        "subtasks": [],
+        "updatedAt": "2026-04-17T17:22:10.019Z"
       },
       {
         "id": "4",
@@ -139,7 +140,7 @@
       "version": "1.0.0",
       "lastModified": "2026-04-17T17:41:32.515Z",
       "taskCount": 10,
-      "completedCount": 3,
+      "completedCount": 4,
       "tags": [
         "master"
       ]
