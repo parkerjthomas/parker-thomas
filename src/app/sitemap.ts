@@ -6,12 +6,17 @@ import { getAllPosts } from '@/lib/posts'
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = siteConfig.url
 
-  const posts = getAllPosts().map((post) => ({
-    url: `${base}/writing/${post.slug}`,
-    lastModified: new Date(post.date),
-    changeFrequency: 'monthly' as const,
-    priority: 0.6,
-  }))
+  let posts: MetadataRoute.Sitemap = []
+  try {
+    posts = getAllPosts().map((post) => ({
+      url: `${base}/writing/${post.slug}`,
+      lastModified: new Date(post.date),
+      changeFrequency: 'monthly' as const,
+      priority: 0.6,
+    }))
+  } catch {
+    // safe — returns sitemap without posts if fs fails
+  }
 
   return [
     {

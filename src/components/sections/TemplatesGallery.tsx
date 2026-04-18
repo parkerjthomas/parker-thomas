@@ -1,8 +1,8 @@
 'use client'
 
+import Image from 'next/image'
 import { useState } from 'react'
 
-import { FocusCards } from '@/components/aceternity/FocusCards'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { templates } from '@/content/templates'
 import type { TemplatePreview } from '@/content/templates'
@@ -16,31 +16,41 @@ function filterTemplates(tab: TemplateTab): TemplatePreview[] {
 }
 
 function TemplateGrid({ items }: { items: TemplatePreview[] }) {
-  const cards = items.map((t) => ({
-    title: t.title,
-    src: t.imagePlaceholder,
-  }))
+  const [hovered, setHovered] = useState<number | null>(null)
 
   return (
-    <div className="w-full">
-      <FocusCards cards={cards} />
-      <div
-        className={cn(
-          'grid grid-cols-1 md:grid-cols-3 gap-10 max-w-5xl mx-auto md:px-8 w-full mt-6',
-        )}
-      >
-        {items.map((t) => (
-          <div
-            key={t.slug}
-            className="flex flex-col items-center text-center gap-1 px-1"
-          >
+    <div className="grid grid-cols-1 gap-10 max-w-5xl mx-auto w-full md:grid-cols-3 md:px-8">
+      {items.map((t, index) => (
+        <article
+          key={t.slug}
+          onMouseEnter={() => setHovered(index)}
+          onMouseLeave={() => setHovered(null)}
+          className={cn(
+            'flex flex-col overflow-hidden rounded-lg border border-border bg-card transition-all duration-300 ease-out',
+            hovered !== null &&
+              hovered !== index &&
+              'scale-[0.98] blur-sm opacity-80',
+          )}
+        >
+          <div className="relative h-48 w-full shrink-0 bg-muted md:h-56">
+            <Image
+              src={t.imagePlaceholder}
+              alt={`${t.title} template preview`}
+              fill
+              sizes="(max-width: 768px) 100vw, 33vw"
+              className="object-contain p-4"
+              unoptimized
+            />
+          </div>
+          <div className="flex flex-col gap-1 px-4 pb-5 pt-4 text-center md:text-left">
+            <h3 className="font-semibold text-foreground">{t.title}</h3>
             <p className="text-sm text-muted-foreground">{t.tagline}</p>
             <p className="text-sm font-medium text-foreground tabular-nums">
               {t.priceRange}
             </p>
           </div>
-        ))}
-      </div>
+        </article>
+      ))}
     </div>
   )
 }

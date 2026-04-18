@@ -1,11 +1,28 @@
 'use client'
 
+import {
+  IconBuildingStore,
+  IconCurrencyDollar,
+  IconDental,
+  IconLeaf,
+  IconRocket,
+  IconSparkles,
+} from '@tabler/icons-react'
 import Link from 'next/link'
 
 import { BentoGrid, BentoGridItem } from '@/components/aceternity/BentoGrid'
 import { TracingBeam } from '@/components/aceternity/TracingBeam'
 import { buttonVariants } from '@/components/ui/button'
 import { homeContent } from '@/content/home'
+
+const bentoIcons = [
+  <IconSparkles key="0" className="h-8 w-8 text-primary" />,
+  <IconLeaf key="1" className="h-8 w-8 text-primary" />,
+  <IconDental key="2" className="h-8 w-8 text-primary" />,
+  <IconBuildingStore key="3" className="h-8 w-8 text-primary" />,
+  <IconRocket key="4" className="h-8 w-8 text-primary" />,
+  <IconCurrencyDollar key="5" className="h-8 w-8 text-primary" />,
+]
 
 export default function AboutSection() {
   const { about } = homeContent
@@ -29,6 +46,7 @@ export default function AboutSection() {
           {about.bentoItems.map((item, i) => (
             <BentoGridItem
               key={i}
+              icon={bentoIcons[i]}
               title={item.title}
               description={item.description}
               className={

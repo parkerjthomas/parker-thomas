@@ -47,7 +47,7 @@ export default function HeroSection() {
             <TypewriterEffectSmooth
               words={typewriterWords}
               className="my-4 max-w-2xl justify-center font-sans font-normal"
-              cursorClassName="bg-primary"
+              cursorClassName="bg-primary opacity-0"
             />
             <div className="mt-4 flex flex-col items-center gap-4 sm:mt-6 sm:flex-row sm:justify-center">
               <ButtonMovingBorder

@@ -1,11 +1,12 @@
 import type { NextConfig } from 'next'
 import createMDX from '@next/mdx'
-import rehypePrettyCode from 'rehype-pretty-code'
 import remarkGfm from 'remark-gfm'
+import remarkFrontmatter from 'remark-frontmatter'
+import rehypePrettyCode from 'rehype-pretty-code'
 
 const withMDX = createMDX({
   options: {
-    remarkPlugins: [remarkGfm],
+    remarkPlugins: [remarkGfm, remarkFrontmatter],
     rehypePlugins: [
       [
         rehypePrettyCode,
